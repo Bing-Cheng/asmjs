@@ -16,11 +16,18 @@ int add(int x, int y) {
 int proc(unsigned char *y, int w, int h, int c) {
 for(int i = 0;i<h;i++){
 	for(int j = 0;j<w;j++){
+int r = *(y + i*w*c + j*c + 0);
+int g = *(y + i*w*c + j*c + 1);
+int b = *(y + i*w*c + j*c + 2);
+int nr;
+if((r>1.8*g) && (r>b) && (b>10) && (r>40)){
+ nr = (g>>1) + (b>>1);
+}
 
 
-*(y + i*w*c + j*c + 0)=*(y + i*w*c + j*c + 0)+10;//(unsigned char)255;//r
-*(y + i*w*c + j*c + 1)=*(y + i*w*c + j*c + 0)+15;//(unsigned char)33;//g
-*(y + i*w*c + j*c + 2)=*(y + i*w*c + j*c + 0)+50;//(unsigned char)33;//b
+*(y + i*w*c + j*c + 0)=(unsigned char)nr;//r
+*(y + i*w*c + j*c + 1)=(unsigned char)g;//g
+*(y + i*w*c + j*c + 2)=(unsigned char)b;//b
 }
 }
 

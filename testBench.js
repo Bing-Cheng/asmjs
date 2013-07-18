@@ -10,7 +10,8 @@ console.log(p2.length);
 for(var i = 0; i <p2.length; i++){
 p2[i] = i;
 }
-for(var i = 0; i <p2.length; i++){
+for(var i = 0; i <p2.length/3; i++){
+p2[i*3] = 255;
 //console.log(p3[i]);
 }
 var buf = Module._malloc(size);

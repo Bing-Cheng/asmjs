@@ -19,9 +19,11 @@ for(int i = 0;i<h;i++){
 int r = *(y + i*w*c + j*c + 0);
 int g = *(y + i*w*c + j*c + 1);
 int b = *(y + i*w*c + j*c + 2);
-
+int nr;
 if((r>1.8*g) && (r>b) && (b>10) && (r>40)){
-int nr = (g>>1) + (b>>1);
+ nr = (g>>1) + (b>>1);
+}else{
+ nr = r;
 }
 
 

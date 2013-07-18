@@ -23,7 +23,7 @@ var heapBytes= new Uint8Array(Module.HEAPU8.buffer, buf, size);
 
 //Module.HEAPU8.set(p2,buf);
 
-var p3 = Module.ccall('proc', 'number', ['number'],[buf]);
+var p3 = Module.ccall('proc', 'number', ['number'],[buf,w,h,c]);
 
   var heapFloats= new Uint8Array(Module.HEAPU8.buffer, buf, size);
 console.log( p3);
